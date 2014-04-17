@@ -2,6 +2,8 @@
 
 Do you use tags to organize content on your site? This widget will turn your boring tag list into a magical input that turns each tag into a style-able object with its own delete link. The widget handles all the data - your form just sees a comma-delimited list of tags!
 
+The widget is an implementation of the [Tags](http://xoxco.com/projects/code/tagsinput/) jQuery plugin
+
 ### Properties
 This widget __Tags__ has the following properties: 
 
