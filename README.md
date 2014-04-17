@@ -21,11 +21,6 @@ And has the following events:
 * __onRemoveTag__: This event will be triggred when a new tag has been deleted.
 * __onChange__: This event will be triggred when a new tag has been added or removed.
 
-### Goals
-The __Select2__ is a draggable widget that you can add to your wakanda pages. Once added in your page, you can bind a datasource by dragging the datasource property directly into the widget or by adding the datasource property name in the value field. 
-
-Any value associated will be transformed into a select boxe that supports searching.
-
 ### Install
 For more information on how to install a custom widget, refer to [Installing a Custom Widget](http://doc.wakanda.org/WakandaStudio0/help/Title/en/page3869.html#1027761).
 
