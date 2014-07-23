@@ -76,14 +76,17 @@ WAF.define('Tags', ['waf-core/widget'], function(widget) {
 
 			options.onAddTag = function (arg) {
 				that.fire('add', {value:arg});
+				that.value($(that.input).val());
 			};
 
 			options.onRemoveTag = function (arg) {
 				that.fire('remove', {value:arg});
+				that.value($(that.input).val());
 			};
 
 			options.onChange = function (arg) {
 				that.fire('change', {value:arg});
+				that.value($(that.input).val());
 			};
 
 			if(this.maxChars() > 0){
@@ -108,7 +111,7 @@ WAF.define('Tags', ['waf-core/widget'], function(widget) {
 				value = value.join(',');
 			}
 
-			$(this.input).importTags(value);
+			$(this.input).importTags(value || '' );
 		}
 	});
 
