@@ -62,6 +62,7 @@ WAF.define('Tags', ['waf-core/widget'], function(widget) {
 			};
 			var that = this;
 
+
 			// var map = [
 			// 	{name: 'add', event: 'onAddTag'},
 			// 	{name: 'remove', event: 'onRemoveTag'}
@@ -73,20 +74,30 @@ WAF.define('Tags', ['waf-core/widget'], function(widget) {
 			// 		this.fire(el.name, {value:arg0});
 			// 	}.bind(that);
 			// });
+			
+			var subscriber = this.value.onChange( function(value) { 
+    			//this.render(); 
+    			this.import(this.value());
+    		});
 
 			options.onAddTag = function (arg) {
 				that.fire('add', {value:arg});
+				subscriber.pause();
 				that.value($(that.input).val());
+				subscriber.resume();
 			};
 
 			options.onRemoveTag = function (arg) {
 				that.fire('remove', {value:arg});
+				subscriber.pause();				
 				that.value($(that.input).val());
+				subscriber.resume();
 			};
 
 			options.onChange = function (arg) {
-				that.fire('change', {value:arg});
+				subscriber.pause();
 				that.value($(that.input).val());
+				subscriber.resume();
 			};
 
 			if(this.maxChars() > 0){
@@ -96,6 +107,9 @@ WAF.define('Tags', ['waf-core/widget'], function(widget) {
 			$(this.input).tagsInput(options);
 
 			this.import(this.value());
+			
+
+    			
 		},
 
 		add: function (value) {
